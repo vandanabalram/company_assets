@@ -3,15 +3,16 @@ import "./Navbar.css";
 import logo from './images1.jpg';
 import Modal from 'react-modal';
 import RegisterPage from '../RegisterPage/RegisterPage'
-
-import BrowserHistory from '../Utils/BrowserHistory';
+import LoginPage from '../LoginPage/LoginPage';
 class Navbar extends Component {
   constructor() {
     super();
  
     this.state = {
-      modalIsOpen: false
-    };
+      modalIsOpen: false,
+      modalIsOpen1: false
+       };
+     
   }
 
   openModal=()=> {
@@ -20,6 +21,18 @@ class Navbar extends Component {
   closeModal=()=> {
     this.setState({modalIsOpen: false});
   }
+ 
+   
+  openModal1=()=> {
+    this.setState({modalIsOpen1: true});
+  }
+  closeModal1=()=> {
+    this.setState({modalIsOpen1: false});
+  }
+  
+  
+  
+  
   render() {
     return (
       <div>
@@ -30,21 +43,28 @@ class Navbar extends Component {
                 <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7" >
                 </div>
                 
-                <div className="col-xs-1 col-sm-1 col-md-2 col-lg-1"style={{color:'white'}}>
+                <div className="col-xs-1 col-sm-1 col-md-2 col-lg-1" style={{color:'white'}}>
                 <button onClick={this.openModal}> Register</button>
                 </div>
-                <div className="col-xs-1 col-sm-1 col-md-2 col-lg-1"style={{color:'white'}} >
-                <button> Signin</button>
+                <div className="col-xs-1 col-sm-1 col-md-2 col-lg-1" style={{color:'white'}} >
+                <button onClick={this.openModal1} > Signin</button>
                 </div>
       </div> 
-      <Modal
+        <Modal 
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           contentLabel="Register Modal"
         >
           <RegisterPage />
-          
+        </Modal>
+        <Modal
+          isOpen1={this.state.modalIsOpen1}
+          onAfterOpen1={this.afterOpenModal1}
+          onRequestClose1={this.closeModal1}
+          contentLabel="Login Modal"
+        >
+          <LoginPage />
         </Modal>
       </div>
     );
