@@ -9,8 +9,9 @@ import Navbar from './Components/Navbar/Navbar';
 export default class App extends Component {
   render() {
     return <div className="app"> 
-<Dashboardpage/>
+{/* <Dashboardpage/> */}
 {/* <Navbar/> */}
+<HomePage/>
     </div>
   }
 }

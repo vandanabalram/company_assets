@@ -23,7 +23,9 @@ fields
 }
 
 submituserRegistrationForm(e) {
+    // debugger;
 e.preventDefault();
+// debugger;
 if (this.validateForm()) {
 let fields = {};
 fields["name"] = "";
@@ -33,7 +35,7 @@ fields["mobileno"] = "";
 fields["password"] = "";
 fields["Confirmpassword"] = "";
 this.setState({fields:fields});
-alert("Form submitted");
+alert("registered");
 }
 
 }
@@ -98,10 +100,10 @@ errors["password"] = "*Please enter your password.";
 }
 
 if (typeof fields["password"] !== "undefined") {
-if (!fields["password"].match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/)) {
-formIsValid = false;
-errors["password"] = "*Please enter secure and strong password.";
-}
+// if (!fields["password"].match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/)) {
+// formIsValid = false;
+// errors["password"] = "*Please enter secure and strong password.";
+// }
 }
 if (!fields["Confirmpassword"]) {
     formIsValid = false;
@@ -109,10 +111,10 @@ if (!fields["Confirmpassword"]) {
     }
     
     if (typeof fields["Confirmpassword"] !== "undefined") {
-    if (!fields["Confirmpassword"].match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/)) {
-    formIsValid = false;
-    errors["Confirmpassword"] = "*Please enter secure and strong password.";
-    }
+    // if (!fields["Confirmpassword"].match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/)) {
+    // formIsValid = false;
+    // errors["Confirmpassword"] = "*Please enter secure and strong password.";
+    // }
     }
 
 this.setState({
